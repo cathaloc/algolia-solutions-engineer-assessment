@@ -4,6 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
+    "algoliasearch": "^3.24.8",
+    "algoliasearch-helper": "^2.23.2",
     "autoprefixer": "^7.2.3",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.0",
