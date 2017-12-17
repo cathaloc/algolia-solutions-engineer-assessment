@@ -29,8 +29,9 @@ export default class Search extends React.Component {
   }
 
   searchQueryChanged(e) {
-    this.setState({searchQuery: e.target.value});
-    this.performSearch();
+    this.setState({searchQuery: e.target.value}, () => {
+      this.performSearch();
+    });
   }
 
   performSearch() {

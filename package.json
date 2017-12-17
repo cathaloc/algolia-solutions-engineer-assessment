@@ -26,7 +26,7 @@
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-router": "^1.0.3",
-    "webpack": "^1.12.9",
+    "webpack": "^1.15.0",
     "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {},
@@ -36,7 +36,7 @@
     "sass:build": "npm-run-all -p build-task:*",
     "sass:watch": "chokidar 'src/styles/**/*.scss' -c 'npm run sass:build'",
     "dev": "npm-run-all -p sass:* dev-server",
-    "dev-server": "webpack-dev-server --content-base src --inline --hot"
+    "dev-server": "webpack-dev-server --inline --hot --content-base src"
   },
   "author": "",
   "license": "ISC"
