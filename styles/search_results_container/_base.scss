@@ -1,0 +1,11 @@
+.search-results-container {
+  position: relative;
+  background-color: green;
+
+  box-sizing: border-box;
+  padding: 10px 20px;
+  width: 70%;
+  height: 500px;
+}
+
+@import "search_result/base"

@@ -1,0 +1,15 @@
+.search-filters-container {
+  position: relative;
+  background-color: red;
+
+  box-sizing: border-box;
+  padding: 10px 20px;
+  width: 30%;
+  height: 500px;
+
+  .search-query{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 10px;
+  }
+}
