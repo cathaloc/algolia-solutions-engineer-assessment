@@ -4,16 +4,17 @@ import SearchResult from "./SearchResult";
 
 export default class SearchResults extends React.Component {
   render() {
+    const { searchResult } = this.props;
     return (
       <li class="search-result">
-        <image class="search-result-thumbnail" src="https://amazingslider.com/wp-content/uploads/2012/12/dandelion.jpg"/>
+        <img class="search-result-thumbnail" src={ searchResult.image_url }/>
         <div class="search-result-details">
-          <label class="search-result-title">This is a search result </label>
+          <label class="search-result-title">{ searchResult.name }</label>
           <div>
-            <span class="search-result-stars">4.2 / 5.0 stars</span>
-            <span class="search-result-ratings">(1025 ratings)</span>
+            <span class="search-result-stars">{ searchResult.stars_count } / 5.0 stars</span>
+            <span class="search-result-ratings">({ searchResult.reviews_count } reviews)</span>
           </div>
-          <div class="search-result-extra-details">American & Seafood | SOMA | $31 to $50 </div>
+          <div class="search-result-extra-details">{searchResult.food_type} | {searchResult.neighborhood} | {searchResult.price_range} </div>
         </div>
       </li>
     );
