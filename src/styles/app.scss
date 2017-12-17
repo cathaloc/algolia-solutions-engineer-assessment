@@ -1,3 +1,14 @@
-.search-query-container{
-  background-color: #1C688E;
+#app{
+  width: 820px;
+  height: 520px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @import "search_query_container/base";
+  @import "search_filters_container/base";
+  @import "search_results_container/base";
+}
+
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
