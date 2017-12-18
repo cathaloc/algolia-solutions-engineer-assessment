@@ -1,0 +1,16 @@
+.filter-option{
+  cursor: pointer;
+  white-space: nowrap;
+
+
+  .filter-option-name{
+    padding-right: 50px;
+    display: block;
+  }
+  .filter-option-count{
+    float: right;
+  }
+  .is-selected{
+    color: green;
+  }
+}

@@ -22,6 +22,10 @@ export default class Search extends React.Component {
     SearchStore.on("searchResults:update", () => {
       this.setState({searchResults: SearchStore.getResults()});
     });
+
+    SearchStore.on("searchFilters:update", () => {
+      this.setState({searchFilters: SearchStore.getFilters()});
+    });
   }
 
   flexStyle = {
@@ -43,7 +47,7 @@ export default class Search extends React.Component {
       <div>
         <SearchQuery onChange={this.searchQueryChanged.bind(this)}/>
         <div style={this.flexStyle}>
-          <SearchFilters />
+          <SearchFilters searchFilters={this.state.searchFilters} />
           <SearchResults searchResults={this.state.searchResults} />
         </div>
       </div>

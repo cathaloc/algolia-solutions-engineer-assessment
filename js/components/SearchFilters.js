@@ -8,11 +8,16 @@ export default class SearchFilters extends React.Component {
   }
 
   render() {
+    const searchFilters = Object.keys(this.props.searchFilters).map((filterType, i) => {
+      const filterOptions = this.props.searchFilters[filterType]
+
+      return <SearchFilter searchFilterType={filterType} searchFilterOptions={filterOptions} key={i} />;
+    });
+
     return (
       <div class="search-filters-container">
         <ul>
-          <SearchFilter type="Food/Cuisine"/>
-          <SearchFilter type="Payment Method"/>
+          { searchFilters }
         </ul>
       </div>
     );

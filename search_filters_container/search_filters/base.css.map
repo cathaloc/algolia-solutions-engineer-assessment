@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "base.css",
+	"sources": [
+		"../../styles/search_filters_container/search_filters/base.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,oBAAoB,CAAA;EAChB,KAAK,EAAE,KAAK,GACb;;AACD,AAAA,YAAY,CAAA;EACV,KAAK,EAAE,KAAK,GACb"
+}
