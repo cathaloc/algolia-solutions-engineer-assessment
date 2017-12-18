@@ -9,9 +9,10 @@
   font-size: 13px;
   color: #000000;
   line-height: 20px;
+  user-select: none;
 
-  &:hover{
-    background-color: #2897C5;
+  &:active{
+    background-color: #1C688E;
   }
 
   .filter-option-name{
@@ -35,7 +36,11 @@
     float: right;
     color: #9A9A9A;
   }
-  .is-selected{
-    color: green;
+
+  &:hover, &.is-selected{ 
+    background-color: #2897C5;
+    
+    .filter-option-name { color: white; }
+    .filter-option-count{ color: white; }
   }
 }
