@@ -4,7 +4,7 @@ import SearchResult from "./SearchResult";
 
 export default class SearchResults extends React.Component {
   render() {
-    const searchResults = this.props.searchResults.map((result, i) => {
+    const searchResults = this.props.searchResults.map((result) => {
       return <SearchResult searchResult={result} key={result.objectID}/>;
     });
 
