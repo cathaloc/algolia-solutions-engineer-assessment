@@ -20,6 +20,7 @@
     "chokidar-cli": "^1.2.0",
     "flux": "^2.1.1",
     "history": "^1.17.0",
+    "http-server": "^0.10.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
     "postcss-cli": "^4.1.1",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "http-server src",
     "build-task:scss-compile": "node-sass-chokidar --source-map true src/styles/ -o src",
     "build-task:autoprefixer": "postcss src/*.css --use autoprefixer -d src",
     "sass:build": "npm-run-all -p build-task:*",
