@@ -1,8 +1,12 @@
 #app{
   width: 820px;
   height: 520px;
-  margin: 0 auto;
+  margin: 42px auto 0;
   overflow: hidden;
+  background-color: white;
+
+  border: 1px solid #CCCCCC;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.20);
 
   @import "search_query_container/base";
   @import "search_filters_container/base";

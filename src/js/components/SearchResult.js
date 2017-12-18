@@ -1,6 +1,7 @@
 import React from "react";
 
 import SearchResult from "./SearchResult";
+import SearchResultStars from "./SearchResultStars";
 
 export default class SearchResults extends React.Component {
   detailsHtml() {
@@ -16,7 +17,8 @@ export default class SearchResults extends React.Component {
         <div class="search-result-details">
           <label class="search-result-title" dangerouslySetInnerHTML={{__html: searchResult._highlightResult.name.value }}></label>
           <div>
-            <span class="search-result-stars">{ searchResult.stars_count } / 5.0 stars</span>
+            <span class="search-result-star-count">{ searchResult.stars_count }</span>
+            <SearchResultStars starsCount={ searchResult.stars_count } />
             <span class="search-result-ratings">({ searchResult.reviews_count } reviews)</span>
           </div>
           <div class="search-result-extra-details" dangerouslySetInnerHTML={{__html: this.detailsHtml()}}></div>

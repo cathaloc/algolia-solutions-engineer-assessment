@@ -1,5 +1,4 @@
 .search-result {
-  background-color: orange;
   margin-bottom: 15px;
   display: flex;
 
@@ -21,7 +20,33 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
+    font-family: HelveticaNeue;
     font-size: 16px;
+
+    margin-bottom: 8px;
+  }
+
+  .search-result-star-count{
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    color: #FFAB66;
+    margin-right: 5px;
+  }
+
+  .search-result-stars{
+    margin-right: 11px;
+
+    .search-result-star{
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+      background-size: contain;
+      background-image: url('../resources/graphics/star-empty.png');
+
+      &.is-filled{
+        background-image: url('../resources/graphics/stars-plain.png')
+      }
+    }
   }
 
   .search-result-ratings{
