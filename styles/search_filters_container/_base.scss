@@ -1,15 +1,18 @@
 .search-filters-container {
   position: relative;
-  background-color: red;
 
   box-sizing: border-box;
   padding: 10px 20px;
-  min-width: 30%;
-  height: 500px;
+  width: 30%;
+
+  border-right: 1px #E6E6E6 solid;
+
+  overflow-y: auto;
 
   ul{
     list-style: none;
     padding: 0;
+    margin: 0;
   }
   @import "search_filter/base";
 }

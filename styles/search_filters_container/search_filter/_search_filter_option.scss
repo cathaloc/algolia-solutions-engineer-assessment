@@ -2,13 +2,38 @@
   cursor: pointer;
   white-space: nowrap;
 
+  padding: 0 10px;
+  border-radius: 3px;
+
+  font-family: OpenSans-Regular;
+  font-size: 13px;
+  color: #000000;
+  line-height: 20px;
+
+  &:hover{
+    background-color: #2897C5;
+  }
 
   .filter-option-name{
-    padding-right: 50px;
     display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    margin-right: 26px;
+      
+    // &:after{
+    //   content: ' ';
+    //   top: 0;
+    //   right: 0;
+    //   height: 100%;
+    //   width: 20px;
+    //   position: absolute;
+    //   background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+    // }
   }
   .filter-option-count{
     float: right;
+    color: #9A9A9A;
   }
   .is-selected{
     color: green;

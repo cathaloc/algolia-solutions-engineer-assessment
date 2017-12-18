@@ -1,7 +1,14 @@
 .search-filter{
+  
+  h4{
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    color: #333333;
+    margin: 23px 0 12px;
+  }
 
   ul{
-    padding: 0 20px;
+    padding: 0;
   }
 
   @import "search_filter_option";
