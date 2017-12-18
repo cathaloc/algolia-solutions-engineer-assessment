@@ -25,7 +25,6 @@ export function toggleFilter(filterType, filterOption) {
 
 function userLocationObtained(position) {
   const latLong = `${position.coords.latitude}, ${position.coords.longitude}`;
-  console.log("Got latLong! " + latLong)
   algoliaQuerier.setQueryParameter('aroundLatLngViaIP', false)
   algoliaQuerier.setQueryParameter('aroundLatLng', latLong)
 }
