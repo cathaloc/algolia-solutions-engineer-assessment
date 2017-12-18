@@ -13,7 +13,11 @@ export default class Search extends React.Component {
     this.state = {
       searchQuery: "",
       searchResults: SearchStore.getResults(),
-      searchFilters: []
+      searchFilters: [],
+      lastSearchStatistics: {
+        totalResults: 0,
+        processingTimeMS: 0
+      }
     }
     this.performSearch();
   }
@@ -25,6 +29,9 @@ export default class Search extends React.Component {
 
     SearchStore.on("searchFilters:update", () => {
       this.setState({searchFilters: SearchStore.getFilters()});
+    });
+    SearchStore.on("lastSearchStatistics:update", () => {
+      this.setState({lastSearchStatistics: SearchStore.getLastSearchStatistics()});
     });
   }
 
@@ -48,7 +55,7 @@ export default class Search extends React.Component {
         <SearchQuery onChange={this.searchQueryChanged.bind(this)}/>
         <div style={this.flexStyle}>
           <SearchFilters searchFilters={this.state.searchFilters} />
-          <SearchResults searchResults={this.state.searchResults} />
+          <SearchResults searchStatistics={ this.state.lastSearchStatistics }searchResults={this.state.searchResults} />
         </div>
       </div>
     );

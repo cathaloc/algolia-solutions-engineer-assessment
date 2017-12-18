@@ -7,23 +7,28 @@ class SearchStore extends EventEmitter {
     super();
     this.searchResults = [];
     this.searchFilters = {};
+    this.lastSearchStatistics = {
+      totalResults: 0,
+      processingTimeMS: 0
+    };
   }
 
   // WRITE methods
   
-  createSearchResults(results) {
+  updateSearchResults(results) {
     this.searchResults = results;
     this.emit("searchResults:update");
   }
 
-  clearSearchResults() {
-    this.searchResults = [];
-    this.emit("searchResults:update");
-  }
-
-  createSearchFilterOptions(filter_type, filter_options) {
+  updateSearchFilterOptions(filter_type, filter_options) {
     this.searchFilters[filter_type] = filter_options;
     this.emit("searchFilters:update");
+  }
+
+  updateLastSearchStatistics(totalResults, processingTimeMS) {
+    this.lastSearchStatistics.totalResults = totalResults;
+    this.lastSearchStatistics.processingTimeMS = processingTimeMS;
+    this.emit("lastSearchStatistics:update");
   }
 
   // READ methods
@@ -36,17 +41,26 @@ class SearchStore extends EventEmitter {
     return this.searchFilters;
   }
 
+  getLastSearchStatistics() {
+    return this.lastSearchStatistics;
+  }
+
   // ACTION handler
 
   handleActions(action) {
     switch(action.type) {
       case "UPDATE_SEARCH_RESULTS":
-        this.createSearchResults(action.results);
+        this.updateSearchResults(action.results);
       break;
 
       case "UPDATE_SEARCH_FILTER_OPTIONS":
-        this.createSearchFilterOptions(action.filter_type, action.filter_options);
+        this.updateSearchFilterOptions(action.filter_type, action.filter_options);
       break;
+
+      case "UPDATE_SEARCH_STATISTICS":
+        this.updateLastSearchStatistics(action.nbHits, action.processingTimeMS);
+      break;
+
     }
   }
 }
