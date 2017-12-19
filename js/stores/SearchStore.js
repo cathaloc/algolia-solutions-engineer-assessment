@@ -16,7 +16,10 @@ class SearchStore extends EventEmitter {
   // WRITE methods
   
   updateSearchResults(results) {
-    this.searchResults = results;
+    if(results.page == 0) {
+      this.clearResults();
+    }
+    this.searchResults = this.searchResults.concat(results.hits);
     this.emit("searchResults:update");
   }
 
@@ -43,6 +46,12 @@ class SearchStore extends EventEmitter {
 
   getLastSearchStatistics() {
     return this.lastSearchStatistics;
+  }
+
+  // DELETE methds
+  
+  clearResults() {
+    this.searchResults = [];
   }
 
   // ACTION handler
