@@ -41,10 +41,10 @@
       height: 15px;
       width: 15px;
       background-size: contain;
-      background-image: url('../resources/graphics/star-empty.png');
+      background-image: url('resources/graphics/star-empty.png');
 
       &.is-filled{
-        background-image: url('../resources/graphics/stars-plain.png')
+        background-image: url('resources/graphics/stars-plain.png')
       }
     }
   }
