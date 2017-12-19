@@ -39,6 +39,12 @@ export default class Search extends React.Component {
     display: 'flex'
   }
 
+  columnFlexStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%'
+  }
+
   searchQueryChanged(e) {
     this.setState({searchQuery: e.target.value}, () => {
       this.performSearch();
@@ -51,11 +57,11 @@ export default class Search extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={this.columnFlexStyle}>
         <SearchQuery onChange={this.searchQueryChanged.bind(this)}/>
         <div style={this.flexStyle}>
           <SearchFilters searchFilters={this.state.searchFilters} />
-          <SearchResults searchStatistics={ this.state.lastSearchStatistics }searchResults={this.state.searchResults} />
+          <SearchResults searchStatistics={ this.state.lastSearchStatistics } searchResults={this.state.searchResults} />
         </div>
       </div>
     );

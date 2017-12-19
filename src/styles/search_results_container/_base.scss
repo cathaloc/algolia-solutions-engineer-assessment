@@ -4,12 +4,25 @@
   box-sizing: border-box;
   padding: 10px 20px;
   width: 70%;
-  height: 500px;
 
   overflow-y: auto;
 
-  .search-results-details {
-    
+  .search-results-details {}
+
+  .search-results-actions{
+    display: flex;
+    justify-content: center;
+
+    .search-results-show-more {
+      opacity: 0.5;
+      font-family: OpenSans-SemiBold;
+      font-size: 14px;
+      color: #000000;
+
+      padding: 9px 54px;
+      border: 1px solid #E6E6E6;
+      border-radius: 4px;
+    }
   }
 }
 

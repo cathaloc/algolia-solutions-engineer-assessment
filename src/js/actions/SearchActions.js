@@ -15,8 +15,12 @@ if("geolocation" in navigator) {
 
 algoliaQuerier.on('result', searchResultsRecieved);
 
-export function performSearch(query, filters) {
-  algoliaQuerier.setQuery(query).search();
+export function performSearch(query) {
+  algoliaQuerier.setQuery(query).setPage(0).search();
+}
+
+export function getNextPageOfResults() {
+  algoliaQuerier.nextPage().search();
 }
 
 export function toggleFilter(filterType, filterOption) {
@@ -32,9 +36,8 @@ function userLocationObtained(position) {
 function searchResultsRecieved(results) {
   dispatcher.dispatch({
     type: 'UPDATE_SEARCH_RESULTS',
-    results: results.hits
+    results: results
   });
-
 
   dispatcher.dispatch({
     type: 'UPDATE_SEARCH_STATISTICS',
